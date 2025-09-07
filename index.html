@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCURobot - 广城理机器人</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 左右布局样式 */
+        .intro-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
+        }
+        .intro-text { flex: 1; }
+        .intro-img { flex-shrink: 0; }
+        .team-image {
+            max-width: 350px;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0,196,255,0.12);
+        }
+        /* 新增样式 */
+        .advide-inline {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 40px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- ... 现有 HTML 内容 ... -->
+    <!-- 
+        项目名称: GCURobot 网站
+        文件: text.html
+        作者: 卓一帆
+        创建日期: 2025年9月5日
+        版权: © 2025 GCURobot. All rights reserved.
+    -->
+    <!-- 导航（固定顶部，恢复链接） -->
+    <nav class="top-nav">
+        <div class="logo" id="logo-home">GCURobot</div>
+        <div class="nav-links">
+            <a href="#intro">团队介绍</a>
+            <a href="#goals">队伍目标</a>
+            <a href="#honors">荣誉之路</a>
+            <a href="#media">媒体展示</a>
+        </div>
+    </nav>
+
+    <!-- 英雄区（视频背景+文字） -->
+    <section id="hero" class="parallax">
+      <video class="hero-video" autoplay loop muted playsinline>
+            <source src="./material/video/wolfvideo1.1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+  <!--  
+<body>
+    <iframe id="bilibili-video"
+        class="hero-video"
+        src="//player.bilibili.com/player.html?bvid=BV1EnhCz2EP7&muted=1&loop=1"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+    </iframe>
+</body>
+ --> 
+        <div class="hero-content">
+            <h1>GCURobot - 广城理机器人</h1>
+            <p>科技、创新、实践、竞技</p>
+        </div>
+    </section>
+
+    <!-- 谏言（融入背景） -->
+    <div class="advide-inline">脚踏实地，仰望星空</div>
+
+    <!-- 团队介绍 -->
+    <section id="intro">
+        <h2>广城理机器人·野狼队</h2>
+        <div class="intro-flex">
+            <div class="intro-text">
+                <p>成立于2017年6月20日，致力于机器人本体、控制系统、传感、通信、系统集成等研究方向，跟踪研究机器人关键技术，重视特种机器人、工业机器人、无人驾驶技术应用开发，并代表广州城市理工学院参加各类机器人赛事。</p>
+                <p>我们集结了来自不同学院和专业的学生，组成一支有胆识、有魄力的一支队伍。面向全校选拔队员，代表学校参加国内外高水平的机器人技术竞赛，一直秉持着“脚踏实地，仰望星空”的宗旨，不断努力突破。队伍汇聚了全校对机器人有着热爱、追求和强烈责任心的优秀青年工程师，为机器人科研工作奉献力量。</p>
+            </div>
+            <div class="intro-img">
+                <img src="./material/picture/队徽5.jpg" alt="队徽" class="team-image">
+            </div>
+        </div>
+    </section>
+
+    <div class="advide-inline">创新是团队的灵魂。</div>
+
+    <!-- 队伍目标 -->
+    <section id="goals">
+        <h2>队伍目标</h2>
+        <div class="goals-flex">
+             <div class="goals-text">
+                 <p>参加赛事。我们一起走过的荣誉之路，也曾披荆斩棘。</p>
+                 <ul>
+                 <li>推动机器人技术创新</li>
+                 <li>培养学生实践能力</li>
+                 <li>争取国际赛事奖项</li>
+                 </ul>
+             </div>
+             <div class="goals-img">
+                  <img src="./material/picture/李超颖3.jpg" alt="Robot Team" class="team-image">
+             </div>
+        </div>
+    </section>
+
+    <div class="advide-inline">每一次挑战，都是成长的机会。</div>
+
+<!-- 荣誉之路（卡片化，翻转动画） -->
+    <section id="honors">
+        <h2>荣誉之路</h2>
+        <p>砥砺前行，突破极限，续写传奇</p>
+        <div class="honor-grid">
+            <div class="honor-card">
+                <div class="card-front">
+                    <h3>ROBOCON</h3>
+                    <p>全国大学生机器人大赛ROBOCON赛事始于2002年，每年举办一次。大赛的冠军队代表中国参加亚洲-太平洋广播电视联盟（Asia-Pacific Broadcasting Union，ABU）主办的亚太大学生机器人大赛（ABU Robocon）。青年学生的积极参与和众多机构的鼎力支持成就了大赛的健康发展。大赛目前已成为国内技术挑战性最强、影响力最大的大学生机器人赛事。</p>
+                </div>
+                <div class="card-back robocon-bg">
+                    <ul>
+                        <li>2023 赛季：第二十一届亚太大学生机器人大赛 国内赛一等奖（全国亚军） </li>
+                        <li>2022 赛季: 第二十一届亚太大学生机器人大赛 国内赛一等奖（全国第九）</li>
+                        <li>2021 赛季: 第二十届亚太大学生机器人大赛 国内赛二等奖</li>
+                        <li>2020 赛季: 第十九届亚太大学生机器人大赛 线上赛全国二等奖</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="honor-card">
+                <div class="card-front">
+                    <h3>RoboMaster</h3>
+                    <p>RoboMaster 机甲大师高校系列赛（RMU, RoboMaster University Series ），是由大疆创新发起，专为全球科技爱好者打造的机器人竞技与学术交流平台。自2013年创办至今，始终秉承“为青春赋予荣耀，让思考拥有力量，服务全球青年工程师成为追求极致、有实干精神的梦想家”的理念，致力于培养与吸纳具有工程思维的综合素质人才，并将科技之美、科技创新理念向公众广泛传递。</p>
+                </div>
+                <div class="card-back robomaster-bg">
+                    <ul>
+                        <li>2024赛季: 机甲大师赛超级对抗赛全国赛 二等奖</li>
+                        <li>2023赛季: 机甲大师赛超级对抗赛全国赛 二等奖</li>
+                        <li>2022赛季: 机甲大师赛超级对抗赛全国赛 一等奖</li>
+                        <li>机甲大师赛超级对抗赛南部分区赛 季军</li>
+                        <li>2021赛季: 机甲大师超级对抗赛全国赛 二等奖</li>
+                        <li>机甲大师南部分区赛 一等奖</li>
+                        <li>2020赛季: 线上评审对抗赛 全国二等奖</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="honor-card">
+                <div class="card-front">
+                    <h3>RMUA</h3>
+                    <p>RoboMaster 机甲大师高校人工智能挑战赛（RMUA, RoboMaster University AI Challenge）自2017年起已连续五年由 DJI RoboMaster 组委会与全球机器人和自动化大会联合主办，并先后在新加坡、澳大利亚、加拿大和中国西安落地执行。该赛事吸引了全球大量顶尖学府、科研机构参与竞赛和学术研讨，进一步扩大了 RoboMaster 在国际机器人学术领域的影响力。比赛需要参赛队综合运用机械、电控和算法等技术知识，自主研发全自动射击机器人参赛，对综合技术能力要求极高。</p>
+                </div>
+                <div class="card-back rmua-bg">
+                    <ul>
+                        <li>2022赛季: 全国三等奖</li>
+                        <li>2021赛季: 优胜奖</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="advide-inline">团结协作，成就非凡</div>
+
+    <!-- 媒体展示（轮播） -->
+    <section id="media">
+        <h2>媒体展示</h2>
+        <p>观看我们的赛事视频和团队照片。</p>
+        <div class="gallery-slider">
+            <img src="./material/picture/李超颖1.jpg" alt="Robot Image 1" class="slide">
+            <img src="./material/picture/李超颖2.jpg" alt="Robot Image 2" class="slide">
+            <img src="./material/picture/李超颖4.jpg" alt="Robot Image 3" class="slide">
+        </div>
+    </section>
+
+    <!-- 谏言 -->
+    <div class="advide-inline">想淋一场金色的雨</div>
+
+    <!-- 底部（头像网格） -->
+<footer>
+    <p>&copy; 2025 GCURobot. All rights reserved.</p>
+    <div class="avatar-grid">
+        <div class="avatar-item">
+            <a href="https://www.douyin.com/user/MS4wLjABAAAAreUdo5qTPiSz4rIkfzzYGeWZ82C_lOfsLW2mKp6pxNzWCgaaI2Jvt8H4JtKz8hsE?from_tab_name=main" target="_blank">
+                <img src="./material/picture/抖音.jpeg" alt="avatar" class="avatar">
+            </a>
+            <div class="avatar-name">抖音</div>
+        </div>
+        <div class="avatar-item">
+            <a href="https://space.bilibili.com/668390955" target="_blank">
+                <img src="./material/picture/队徽1.png" alt="avatar" class="avatar">
+            </a>
+            <div class="avatar-name">哔站</div>
+        </div>
+        <div class="avatar-item">
+            <a href="https://www.weibo.com/n/%E5%8D%8E%E5%B9%BF%E6%9C%BA%E5%99%A8%E4%BA%BA/" target="_blank">
+                <img src="./material/picture/微博.jpg" alt="avatar" class="avatar">
+            </a>
+            <div class="avatar-name">微博</div>
+        </div>
+        <div class="avatar-item">
+            <a href="https://map.baidu.com/search/%E5%B9%BF%E5%B7%9E%E5%9F%8E%E5%B8%82%E7%90%86%E5%B7%A5%E5%AD%A6%E6%A0%A1b4/@12598821.116691804,2668215.0994039997,16.85z?querytype=s&da_src=shareurl&wd=%E5%B9%BF%E5%B7%9E%E5%9F%8E%E5%B8%82%E7%90%86%E5%B7%A5%E5%AD%A6%E6%A0%A1b4&c=257&src=0&pn=0&sug=0&l=15&b=(12593173,2664826;12605077,2670730)&from=webmap&biz_forward=%7B%22scaler%22:2,%22styles%22:%22pl%22%7D&device_ratio=2" target="_blank">
+                <img src="./material/picture/惠泉1.jpg" alt="avatar" class="avatar">
+            </a>
+            <div class="avatar-name">位置</div>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,397 @@
+/*
+ * 项目名称: GCURobot 网站
+ * 文件: style.css
+ * 作者: 卓一帆
+ * 创建日期: 2025年9月5日
+ * 版权: © 2025 GCURobot. All rights reserved.
+ * 描述: 定义网站整体样式，包括导航、英雄区、荣誉卡片和响应式设计
+ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a; /* 深色背景，仿RoboMaster */
+    scroll-behavior: smooth;
+    color: #fff;
+    padding-top: 90px; /* 导航栏高度，按实际调整 */
+}
+
+.top-nav {
+    background: rgba(0,0,0,1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 20px;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links a {
+    color: #eff2f3;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+    color: #eff2f3;
+    text-shadow: 0 0 10px rgba(244, 247, 248, 0.8); /* 霓虹发光 */
+}
+
+#hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.4);
+}
+
+.hero-content {
+    background: linear-gradient(120deg, rgba(255,255,255,0.85) 60%, rgba(0,196,255,0.18) 100%);
+    color: #222;
+    padding: 48px 32px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,196,255,0.12);
+    backdrop-filter: blur(3px);
+    animation: fadeIn 2s ease-in-out;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1.5px solid rgba(0,196,255,0.18);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section:not(#hero) {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #1e1e1e, #333);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(240, 242, 243, 0.3);
+    opacity: 1;
+    transition: opacity 1s, transform 0.5s;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.honor-grid {
+    display: grid;
+    gap: 50px; /* 卡片之间间隔 */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* 稍微增大卡片宽度 */
+}
+
+.honor-card {
+    perspective: 1000px;
+    background: #222;
+    border-radius: 12px;
+    height: 450px; /* 增加高度以容纳更多内容 */
+    overflow: hidden;
+    position: relative;
+ /*   box-shadow: 0 4px 16px rgba(0,196,255,0.2); */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.honor-card:hover {
+    transform: translateY(-10px); /* 悬浮效果 */
+/*    box-shadow: 0 8px 24px rgba(0,196,255,0.4); */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* 平滑翻转动画 */
+    border-radius: 12px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #2a2a2a, #1e1e1e); /* 更柔和的背景渐变 */
+}
+
+.card-front h3 {
+    margin: 0 0 16px 0;
+    font-size: 1.5em; /* 标题稍大 */
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(0,196,255,0.5); /* 标题发光效果 */
+}
+
+.card-front p {
+    margin: 0;
+    font-size: 1em;
+    color: #e0e0e0;
+    line-height: 1.7;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #333, #1e1e1e);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+    font-size: 1em;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.card-back ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+}
+
+.card-back ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.card-back ul li:before {
+    content: "\2714";
+    position: absolute;
+    left: 0;
+    font-size: 1em;
+}
+
+/* 每个卡片不同背景图片 */
+.robocon-bg {
+    background-image: url(./material/picture/rc1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0.5);
+    background-blend-mode: darken;
+}
+
+.robomaster-bg {
+    background-image: url(./material/picture/rm1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0.5);
+    background-blend-mode: darken;
+}
+
+.rmua-bg {
+    background-image: url(./material/picture/rmua1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0.5);
+    background-blend-mode: darken;
+}
+
+.honor-card:hover .card-front {
+    transform: rotateY(-180deg);
+}
+
+.honor-card:hover .card-back {
+    transform: rotateY(0);
+}
+
+.gallery-slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+}
+
+footer {
+    text-align: center;
+    padding: 50px;
+    background-color: #343a40;
+    color: white;
+    position: relative;
+    z-index: 10;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.avatar-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.avatar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.avatar-name {
+    margin-top: 8px;
+    color: #fff;
+    font-size: 0.95em;
+    text-align: center;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+    .honor-grid { grid-template-columns: 1fr; }
+    .hero-content { padding: 20px; }
+    .nav-links { flex-direction: column; }
+    .nav-links a { margin: 10px 0; }
+}
+
+#media {
+    margin-bottom: 120px;
+}
+
+.advide-inline {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 1.35rem;
+    font-family: 'Segoe UI', 'Arial', '微软雅黑', sans-serif;
+    font-weight: 700;
+    margin: 48px 0 24px 0;
+    letter-spacing: 3px;
+    opacity: 0.9;
+    background: none;
+    line-height: 1.8;
+    text-shadow: 0 2px 16px #fff, 0 0 2px #fff;
+    filter: drop-shadow(0 2px 8px #222222);
+    animation: fadeIn 1.2s;
+    z-index: 2;
+    position: relative;
+}
+
+.intro-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+}
+
+.intro-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.intro-img {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.team-image {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,196,255,0.12);
+}
+
+@media (max-width: 768px) {
+    .intro-flex {
+        flex-direction: column;
+        gap: 24px;
+        max-width: 98vw;
+        margin: 0 auto 40px auto;
+    }
+    .intro-img {
+        width: 100%;
+        text-align: center;
+    }
+    .team-image {
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+}
+
+.goals-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+}
+
+.goals-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.goals-img {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.team-image {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,196,255,0.12);
+}
+
+@media (max-width: 768px) {
+    .goals-flex {
+        flex-direction: column;
+        gap: 24px;
+        max-width: 98vw;
+        margin: 0 auto 40px auto;
+    }
+    .goals-img {
+        width: 100%;
+        text-align: center;
+    }
+    .team-image {
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+}
