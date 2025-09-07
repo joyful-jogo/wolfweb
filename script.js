@@ -49,3 +49,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) { // 验证目标存在
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                console.warn(`Target element with ID ${targetId} not found`);
+            }
+        });
+    });
+});
+
+window.addEventListener('error', (event) => {
+    console.error('Client error:', event.message, event.filename, event.lineno);
+    // 可选：发送错误日志到服务器
+    // fetch('/log-error', { method: 'POST', body: JSON.stringify({ message: event.message, file: event.filename, line: event.lineno }) });
+});
