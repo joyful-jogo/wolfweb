@@ -47,6 +47,6 @@ How to Run Locally
 To view the website, simply open the index.html file in your web browser. There is no need for a local server as all dependencies are local files.
 
 /path/to/project/index.html
-Credits
-Author: 卓一帆 (Zhuo Yifan)
+Credits：林佳敏，崔世伟
+Author: 卓一帆 
 Team: GCURobot - 广城理机器人
